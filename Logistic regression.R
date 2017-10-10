@@ -9,7 +9,7 @@ mydata <- tibble(
     )
 
 # Logistic Regression function
-glmres <- glm(y ~ . - 1, data = mydata)
+glmres <- glm(y ~ . - 1, data = mydata, family = binomial())
 
 yint <- (.5-glmres$coefficients["x0"])/glmres$coefficients["x2"]
 slope = -glmres$coefficients["x1"]/glmres$coefficients["x2"]
