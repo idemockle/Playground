@@ -4,7 +4,9 @@ import argparse
 
 
 def ipynb_json_to_py(json_obj):
-    return '\n\n'.join([''.join(i['source']) for i in json_obj['cells']])
+    return '\n\n'.join([''.join(i['source'])
+                        for i in json_obj['cells']
+                        if i['cell type'] == 'code'])
     
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
