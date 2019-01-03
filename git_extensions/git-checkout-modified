@@ -1,0 +1,2 @@
+#!/bin/bash
+git checkout $1 -- `git diff-tree --no-commit-id --name-only -r $1`
